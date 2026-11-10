@@ -6,6 +6,8 @@ and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-10
+
 ### Changed
 
 - Published on npm as `tonekit-themes` (npm does not allow `tonekit`, too close to an existing name). Install with `npm install tonekit-themes`; the brand and site stay tonekit. 0.1.0 was never published.
