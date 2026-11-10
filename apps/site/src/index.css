@@ -1,0 +1,73 @@
+@import "tailwindcss";
+/* the site uses tonekit's own Tailwind preset (from source, see vite.config.js) */
+@import "../../../packages/tonekit/src/tailwind.css";
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* first paint before React mounts: the no-flash script has set the variables */
+html {
+  background: var(--theme-bg);
+  color: var(--theme-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body {
+  font-family: var(--font-sans);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background: rgba(var(--theme-primary-rgb), 0.3);
+}
+
+:focus-visible {
+  outline: 2px solid var(--theme-primary);
+  outline-offset: 2px;
+}
+
+/* a soft glow behind hero sections, in the theme's two brand colours */
+.glow {
+  background:
+    radial-gradient(60rem 30rem at 15% -10%, rgba(var(--theme-primary-rgb), 0.18), transparent 60%),
+    radial-gradient(50rem 26rem at 95% 0%, rgba(var(--theme-accent-rgb), 0.14), transparent 60%);
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, var(--theme-primary), var(--theme-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* every themed element fades between themes instead of snapping */
+.theme-fade,
+.theme-fade * {
+  transition-property: background-color, border-color, color, fill;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+.marquee {
+  animation: marquee 60s linear infinite;
+}
+.marquee:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
