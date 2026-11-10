@@ -32,7 +32,7 @@ describe('themes', () => {
 
   it('the ThemeId type lists exactly the built-in themes', () => {
     const dts = readFileSync(new URL('../src/index.d.ts', import.meta.url), 'utf8')
-    const block = dts.match(/export type ThemeId =([\s\S]*?)\n\n/)[1]
+    const block = dts.match(/export type ThemeId =([\s\S]*?)\r?\n\r?\n/)[1] // any line endings
     const typed = [...block.matchAll(/'([a-z0-9-]+)'/g)].map((m) => m[1]).sort()
     expect(typed).toEqual(themes.map((t) => t.id).sort())
   })
