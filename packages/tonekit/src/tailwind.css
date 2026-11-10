@@ -1,6 +1,6 @@
 /*
  * tonekit for Tailwind CSS v4. After `@import "tailwindcss";` add:
- *   @import "tonekit/tailwind.css";
+ *   @import "tonekit-themes/tailwind.css";
  * Every token becomes a colour utility that follows the active theme:
  * bg-bg, bg-surface, text-text, text-muted, border-border, bg-primary,
  * text-on-primary (also on-accent, on-success, on-warning, on-danger), bg-primary/15 …

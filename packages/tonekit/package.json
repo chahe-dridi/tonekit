@@ -1,5 +1,5 @@
 {
-  "name": "tonekit",
+  "name": "tonekit-themes",
   "version": "0.1.0",
   "description": "23 contrast-checked colour themes (Catppuccin, Nord, Tokyo Night, Gruvbox, Rosé Pine…) with one shared shape: CSS variables, a Tailwind preset, React provider and theme picker.",
   "type": "module",

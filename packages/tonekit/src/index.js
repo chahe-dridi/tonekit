@@ -1,6 +1,6 @@
 // tonekit: 23 contrast-checked colour themes with one shared shape, and the
 // helpers to use them anywhere. No framework code here; React lives in
-// 'tonekit/react', plain CSS in 'tonekit/themes.css'.
+// 'tonekit-themes/react', plain CSS in 'tonekit-themes/themes.css'.
 
 export { themes, themesById, TAGS, DEFAULT_DARK, DEFAULT_LIGHT } from './themes.js'
 export { TOKENS, tokenToVar, getTheme, defineTheme, themeToVars, themeToCss, themesToCss } from './tokens.js'

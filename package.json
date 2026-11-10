@@ -8,11 +8,11 @@
   ],
   "scripts": {
     "dev": "npm run dev -w @tonekit/site",
-    "build": "npm run build -w tonekit && npm run build -w @tonekit/site",
-    "build:lib": "npm run build -w tonekit",
+    "build": "npm run build -w tonekit-themes && npm run build -w @tonekit/site",
+    "build:lib": "npm run build -w tonekit-themes",
     "build:site": "npm run build -w @tonekit/site",
     "preview": "npm run preview -w @tonekit/site",
-    "test": "npm test -w tonekit",
+    "test": "npm test -w tonekit-themes",
     "release": "node scripts/release.mjs",
     "media": "node scripts/readme-media.mjs"
   },
