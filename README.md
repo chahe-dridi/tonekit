@@ -10,7 +10,7 @@ Catppuccin, Nord, Tokyo Night, Gruvbox, Rosé Pine and more, all sharing one sha
 [![CI](https://github.com/chahe-dridi/tonekit/actions/workflows/ci.yml/badge.svg)](https://github.com/chahe-dridi/tonekit/actions/workflows/ci.yml)
 [![license](https://img.shields.io/github/license/chahe-dridi/tonekit?color=3B82F6)](https://github.com/chahe-dridi/tonekit/blob/main/LICENSE)
 
-**[Live site](https://tonekit.vercel.app)** · **[All themes](https://tonekit.vercel.app/themes)** · **[Theme builder](https://tonekit.vercel.app/create)** · **[Docs](https://tonekit.vercel.app/docs)**
+**[Live site](https://tonekit-gamma.vercel.app)** · **[All themes](https://tonekit-gamma.vercel.app/themes)** · **[Theme builder](https://tonekit-gamma.vercel.app/create)** · **[Docs](https://tonekit-gamma.vercel.app/docs)**
 
 <img src="https://raw.githubusercontent.com/chahe-dridi/tonekit/main/.github/media/switch.gif" alt="The tonekit site switching between Catppuccin, Gruvbox, Catppuccin Latte, Tokyo Night and Flexoki Light as theme chips are clicked" width="760">
 
@@ -25,7 +25,7 @@ Catppuccin, Nord, Tokyo Night, Gruvbox, Rosé Pine and more, all sharing one sha
 - **One shape.** The same 13 tokens everywhere, so switching themes is a one-line change.
 - **Use it your way.** A plain stylesheet with `data-theme`, a Tailwind CSS v4 preset, a React `ThemeProvider` and accessible `ThemePicker`, or framework-free functions.
 - **No flash.** A tiny inline script applies the saved theme before the first paint.
-- **Make your own.** `defineTheme()` turns your brand colours into a full theme; the [builder](https://tonekit.vercel.app/create) fixes contrast for you.
+- **Make your own.** `defineTheme()` turns your brand colours into a full theme; the [builder](https://tonekit-gamma.vercel.app/create) fixes contrast for you.
 - **Small.** About 6 kB gzipped with every theme, zero runtime dependencies, TypeScript types included.
 
 <p align="center">
@@ -105,7 +105,7 @@ checkTheme('nord').pass      // true
 const brand = defineTheme({ id: 'brand', base: 'midnight', colors: { primary: '#ff5a5f' } })
 ```
 
-`noFlashScript()` returns an inline `<head>` script that applies the saved theme before first paint. The full API is in the [docs](https://tonekit.vercel.app/docs#api).
+`noFlashScript()` returns an inline `<head>` script that applies the saved theme before first paint. The full API is in the [docs](https://tonekit-gamma.vercel.app/docs#api).
 
 ## Tokens
 
@@ -148,7 +148,7 @@ New themes and fixes are welcome. Branch off `dev` and open your pull request **
 
 ## Credits
 
-Palettes that follow published themes are credited on each [theme page](https://tonekit.vercel.app/themes): Catppuccin, Rosé Pine, Tokyo Night, Nord, Gruvbox, Everforest, Kanagawa, Flexoki, Monokai Pro and Miasma. Thank you to their authors.
+Palettes that follow published themes are credited on each [theme page](https://tonekit-gamma.vercel.app/themes): Catppuccin, Rosé Pine, Tokyo Night, Nord, Gruvbox, Everforest, Kanagawa, Flexoki, Monokai Pro and Miasma. Thank you to their authors.
 
 ## License
 

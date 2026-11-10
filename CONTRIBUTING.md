@@ -35,7 +35,7 @@ git push -u origin theme/my-theme   # then open the PR with base: dev
 
 1. Add it to `packages/tonekit/src/themes.js`: an `id` (kebab-case), `name`, `mode`, one or more `tags` from the list at the bottom of the file, a `credit` with a link if it follows a published palette, and all 13 `colors` as hex.
 2. Add the id to the `ThemeId` type in `packages/tonekit/src/index.d.ts`.
-3. Run `npm test`. It checks the shape, the tags, the type list and every contrast target. If a contrast check fails, the [theme builder](https://tonekit.vercel.app/create) can suggest fixed colours.
+3. Run `npm test`. It checks the shape, the tags, the type list and every contrast target. If a contrast check fails, the [theme builder](https://tonekit-gamma.vercel.app/create) can suggest fixed colours.
 4. Look at it on the site: `npm run dev`, then `/themes/<id>`.
 
 ## Commits
