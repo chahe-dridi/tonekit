@@ -1,0 +1,76 @@
+{
+  "name": "tonekit",
+  "version": "0.1.0",
+  "description": "23 contrast-checked colour themes (Catppuccin, Nord, Tokyo Night, Gruvbox, Rosé Pine…) with one shared shape: CSS variables, a Tailwind preset, React provider and theme picker.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Chaher Dridi (https://github.com/chahe-dridi)",
+  "homepage": "https://github.com/chahe-dridi/tonekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chahe-dridi/tonekit.git",
+    "directory": "packages/tonekit"
+  },
+  "bugs": {
+    "url": "https://github.com/chahe-dridi/tonekit/issues"
+  },
+  "keywords": [
+    "themes",
+    "color-themes",
+    "dark-mode",
+    "light-mode",
+    "css-variables",
+    "design-tokens",
+    "tailwind",
+    "react",
+    "theme-switcher",
+    "catppuccin",
+    "nord",
+    "tokyo-night",
+    "gruvbox",
+    "accessibility",
+    "wcag"
+  ],
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js"
+    },
+    "./themes.css": "./dist/themes.css",
+    "./tailwind.css": "./dist/tailwind.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "build": "vite build && node scripts/build-assets.mjs",
+    "test": "vitest run",
+    "prepack": "node scripts/prepack.mjs"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "jsdom": "^27.0.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5"
+  }
+}
