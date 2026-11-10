@@ -6,6 +6,10 @@ and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- Published on npm as `tonekit-themes` (npm does not allow `tonekit`, too close to an existing name). Install with `npm install tonekit-themes`; the brand and site stay tonekit. 0.1.0 was never published.
+
 ## [0.1.0] - 2026-11-10
 
 ### Added
@@ -15,6 +19,6 @@ and the project uses [Semantic Versioning](https://semver.org/).
 - `themeToVars`, `themeToCss`, `themesToCss`: themes as CSS custom properties, with `on-` text colours and `-rgb` triples.
 - `applyTheme`, `saveTheme`, `loadTheme`, `resolveTheme` and `noFlashScript` for the browser.
 - `defineTheme` for your own themes, and colour helpers (`contrast`, `readableOn`, `mix`).
-- `tonekit/react`: `ThemeProvider`, `useTheme`, an accessible `ThemePicker`, `ThemeScope` and `ThemeSwatch`.
-- `tonekit/themes.css` (every theme, plus OS light/dark defaults) and `tonekit/tailwind.css` (a Tailwind CSS v4 preset).
+- `tonekit-themes/react`: `ThemeProvider`, `useTheme`, an accessible `ThemePicker`, `ThemeScope` and `ThemeSwatch`.
+- `tonekit-themes/themes.css` (every theme, plus OS light/dark defaults) and `tonekit-themes/tailwind.css` (a Tailwind CSS v4 preset).
 - TypeScript definitions.
