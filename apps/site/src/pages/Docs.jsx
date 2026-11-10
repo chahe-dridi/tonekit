@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { CONTRAST_CHECKS, TOKENS, themes, tokenToVar } from 'tonekit'
+import { CONTRAST_CHECKS, TOKENS, themes, tokenToVar } from 'tonekit-themes'
 import { CodeBlock } from '../components/Code'
 import { ROUTES } from '../lib/meta'
 import { INSTALL } from '../lib/site'
@@ -65,13 +65,13 @@ export default function Docs() {
         <section className="space-y-4">
           <H2 id="install">Install</H2>
           <CodeBlock title="terminal" code={INSTALL} />
-          <p className="text-muted">ESM, zero runtime dependencies. React is only needed for <code className="font-mono text-sm text-text">tonekit/react</code>.</p>
+          <p className="text-muted">ESM, zero runtime dependencies. React is only needed for <code className="font-mono text-sm text-text">tonekit-themes/react</code>.</p>
         </section>
 
         <section className="space-y-4">
           <H2 id="css">Plain CSS</H2>
           <p className="text-muted">Load the stylesheet with every theme, then choose one with <code className="font-mono text-sm text-text">data-theme</code>. Without it, the page follows the visitor's light or dark setting.</p>
-          <CodeBlock title="styles.css" code={`@import "tonekit/themes.css";
+          <CodeBlock title="styles.css" code={`@import "tonekit-themes/themes.css";
 
 .card {
   background: var(--theme-surface);
@@ -113,7 +113,7 @@ export default function Docs() {
         <section className="space-y-4">
           <H2 id="react">React</H2>
           <p className="text-muted"><code className="font-mono text-sm text-text">ThemeProvider</code> applies the theme to the page and remembers it; <code className="font-mono text-sm text-text">ThemePicker</code> is a ready-made, keyboard-accessible menu with live preview.</p>
-          <CodeBlock title="App.jsx" code={`import { ThemeProvider, ThemePicker, useTheme } from 'tonekit/react'
+          <CodeBlock title="App.jsx" code={`import { ThemeProvider, ThemePicker, useTheme } from 'tonekit-themes/react'
 
 export default function App() {
   return (
@@ -131,7 +131,7 @@ function Page() {
   return <button onClick={() => setTheme('nord')}>Now: {theme.name}</button>
 }`} />
           <p className="text-muted">Show part of a page in a different theme, for previews or a contrasting section:</p>
-          <CodeBlock title="Preview.jsx" code={`import { ThemeScope } from 'tonekit/react'
+          <CodeBlock title="Preview.jsx" code={`import { ThemeScope } from 'tonekit-themes/react'
 
 <ThemeScope theme="gruvbox" className="rounded-xl p-6">
   <Card />  {/* sees gruvbox's --theme-* variables */}
@@ -142,7 +142,7 @@ function Page() {
           <H2 id="tailwind">Tailwind CSS</H2>
           <p className="text-muted">The v4 preset turns every token into a colour utility that follows the active theme, and points <code className="font-mono text-sm text-text">dark:</code> at the theme's mode.</p>
           <CodeBlock title="app.css" code={`@import "tailwindcss";
-@import "tonekit/tailwind.css";`} />
+@import "tonekit-themes/tailwind.css";`} />
           <CodeBlock title="Card.jsx" code={`<div className="rounded-xl border border-border bg-surface p-6 text-text">
   <h2 className="font-semibold">Plan</h2>
   <p className="text-muted">Billed monthly.</p>
@@ -155,7 +155,7 @@ function Page() {
         <section className="space-y-4">
           <H2 id="javascript">JavaScript</H2>
           <p className="text-muted">No framework? Apply and remember themes with plain functions.</p>
-          <CodeBlock title="main.js" code={`import { applyTheme, saveTheme, resolveTheme } from 'tonekit'
+          <CodeBlock title="main.js" code={`import { applyTheme, saveTheme, resolveTheme } from 'tonekit-themes'
 
 applyTheme(resolveTheme())          // saved choice, or the OS default
 
@@ -168,7 +168,7 @@ picker.addEventListener('change', (e) => {
         <section className="space-y-4">
           <H2 id="no-flash">No flash on load</H2>
           <p className="text-muted">A page rendered before JavaScript runs would show the default colours for a moment. <code className="font-mono text-sm text-text">noFlashScript()</code> returns a tiny script for your <code className="font-mono text-sm text-text">&lt;head&gt;</code> that applies the saved theme first. This site uses it.</p>
-          <CodeBlock title="build step / server" code={`import { noFlashScript } from 'tonekit'
+          <CodeBlock title="build step / server" code={`import { noFlashScript } from 'tonekit-themes'
 
 const head = \`<script>\${noFlashScript({ dark: 'tokyo-night', light: 'catppuccin-latte' })}</script>\`
 // with <ThemeProvider>, pass the same storageKey to both`} />
@@ -177,7 +177,7 @@ const head = \`<script>\${noFlashScript({ dark: 'tokyo-night', light: 'catppucci
         <section className="space-y-4">
           <H2 id="custom">Your own themes</H2>
           <p className="text-muted">Give your brand colours and borrow the rest from a built-in theme. Try it live in the <Link to="/create" className="font-medium text-primary">theme builder</Link>, which also fixes contrast for you.</p>
-          <CodeBlock title="brand.js" code={`import { defineTheme, checkTheme } from 'tonekit'
+          <CodeBlock title="brand.js" code={`import { defineTheme, checkTheme } from 'tonekit-themes'
 
 export const brand = defineTheme({
   id: 'brand',
@@ -213,7 +213,7 @@ checkTheme(brand).pass   // check it before shipping
               </div>
             ))}
           </dl>
-          <h3 className="pt-2 font-semibold">tonekit/react</h3>
+          <h3 className="pt-2 font-semibold">tonekit-themes/react</h3>
           <dl className="divide-y divide-border rounded-2xl border border-border">
             {REACT_API.map(([name, text]) => (
               <div key={name} className="grid gap-1 px-4 py-3 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] sm:gap-4">
