@@ -28,8 +28,10 @@ export function contrast(a, b) {
   return (hi + 0.05) / (lo + 0.05)
 }
 
+const NEAR_BLACK = '#0b0b0f'
+
 /** Near-black or white, whichever reads better on `hex`. */
-export const readableOn = (hex) => (contrast(hex, '#000000') >= contrast(hex, '#ffffff') ? '#0b0b0f' : '#ffffff')
+export const readableOn = (hex) => (contrast(hex, NEAR_BLACK) >= contrast(hex, '#ffffff') ? NEAR_BLACK : '#ffffff')
 
 /** Mix two colours: weight 0 gives `a`, 1 gives `b`. */
 export function mix(a, b, weight) {
