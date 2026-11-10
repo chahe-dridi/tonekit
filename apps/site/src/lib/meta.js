@@ -3,7 +3,7 @@
 // crawlers and link previews see them without running JavaScript.
 // Plain data only: no imports, so Node can load this file as is.
 
-export const SITE_URL = 'https://tonekit.vercel.app'
+export const SITE_URL = 'https://tonekit-gamma.vercel.app'
 export const SITE_NAME = 'tonekit'
 
 export const ROUTES = {
