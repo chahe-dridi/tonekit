@@ -37,7 +37,7 @@ function preloadsFor(path) {
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
-function render(path, { title, description }, summary) {
+function render(path, { title, description }, summary, image = { file: 'og.png', alt: 'The same app shown in several tonekit colour themes' }) {
   const url = `${SITE_URL}${path}`
   let html = template
     .replace(/<title>[^<]*<\/title>/, `<title>${esc(title)}</title>`)
@@ -48,6 +48,11 @@ function render(path, { title, description }, summary) {
     .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${url}$2`)
     .replace(/(<meta name="twitter:title" content=")[^"]*(")/, `$1${esc(title)}$2`)
     .replace(/(<meta name="twitter:description" content=")[^"]*(")/, `$1${esc(description)}$2`)
+    // the link preview image: a theme page shows that theme's own card
+    .replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${SITE_URL}/${image.file}$2`)
+    .replace(/(<meta name="twitter:image" content=")[^"]*(")/, `$1${SITE_URL}/${image.file}$2`)
+    .replace(/(<meta property="og:image:alt" content=")[^"]*(")/, `$1${esc(image.alt)}$2`)
+    .replace(/(<meta name="twitter:image:alt" content=")[^"]*(")/, `$1${esc(image.alt)}$2`)
   const preloads = preloadsFor(path)
   if (preloads) html = html.replace('</head>', `    ${preloads}\n  </head>`)
   // Crawler-readable summary inside #root; React replaces it on first render
@@ -66,7 +71,7 @@ for (const [path, meta] of Object.entries(ROUTES)) render(path, meta, path === '
 for (const t of themes) {
   const colors = `<h2>Colours</h2><ul>${TOKENS.map((k) => `<li>${k}: ${t.colors[k]}</li>`).join('')}</ul>`
   const credit = t.credit ? `<p>Based on <a href="${t.credit.url}">${esc(t.credit.name)}</a>.</p>` : ''
-  render(`/themes/${t.id}`, themeMeta(t), credit + colors)
+  render(`/themes/${t.id}`, themeMeta(t), credit + colors, { file: `og/${t.id}.png`, alt: `The ${t.name} colour theme: its swatches and an app drawn in it` })
 }
 
 const today = new Date().toISOString().slice(0, 10)
