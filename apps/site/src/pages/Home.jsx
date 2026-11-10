@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { TOKENS, themes, themesById, tokenToVar } from 'tonekit'
 import { ThemeScope, ThemeSwatch, useTheme } from 'tonekit/react'
@@ -76,7 +76,11 @@ checkTheme('gruvbox').pass     // true: every contrast target met`,
 export default function Home() {
   useSEO({ ...ROUTES['/'], path: '/' })
   const { themeId, setTheme, theme } = useTheme()
-  const [shown, setShown] = useState(SHOWCASE[0])
+  // null = follow the site theme; a tab pins a specific theme until the site theme changes again
+  const [pinned, setPinned] = useState(null)
+  useEffect(() => setPinned(null), [themeId])
+  const shown = pinned || themeId
+  const tabs = [themeId, ...SHOWCASE.filter((id) => id !== themeId)]
 
   return (
     <>
@@ -198,13 +202,14 @@ export default function Home() {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-2xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Real components, any theme.</h2>
-            <p className="mt-3 text-muted">The same dashboard, drawn only with the {TOKENS.length} tokens. Switch the theme below; nothing else changes.</p>
+            <p className="mt-3 text-muted">The same dashboard, drawn only with the {TOKENS.length} tokens. It follows the site theme; the tabs show it in others.</p>
           </div>
           <div role="tablist" aria-label="Preview theme" className="flex flex-wrap gap-1.5 rounded-xl border border-border bg-surface p-1">
-            {SHOWCASE.map((id) => (
-              <button key={id} role="tab" type="button" aria-selected={shown === id} onClick={() => setShown(id)}
+            {tabs.map((id) => (
+              <button key={id} role="tab" type="button" aria-selected={shown === id} onClick={() => setPinned(id === themeId ? null : id)}
                 className={`flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm transition ${shown === id ? 'bg-surface-alt font-medium text-text' : 'text-muted hover:text-text'}`}>
-                <ThemeSwatch theme={id} size={16} /> {themesById[id].name}
+                <ThemeSwatch theme={id} size={16} /> {themesById[id]?.name || id}
+                {id === themeId && <span className="rounded bg-primary/15 px-1.5 text-[10px] font-semibold uppercase tracking-wide text-text">site</span>}
               </button>
             ))}
           </div>
