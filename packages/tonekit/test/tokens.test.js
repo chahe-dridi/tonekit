@@ -4,16 +4,29 @@ import {
 } from '../src/index.js'
 
 describe('themeToVars', () => {
-  it('gives every token, on-primary and rgb triples', () => {
+  it('gives every token, on- colours and rgb triples', () => {
     const vars = themeToVars('nord')
     expect(vars['--theme-bg']).toBe('#2e3440')
     expect(vars['--theme-text-muted']).toBe(getTheme('nord').colors.textMuted)
     expect(vars['--theme-on-primary']).toMatch(/^#/)
     expect(vars['--theme-primary-rgb']).toMatch(/^\d+, \d+, \d+$/)
-    expect(Object.keys(vars)).toHaveLength(13 + 1 + 8)
+    expect(vars['--theme-on-danger']).toMatch(/^#/)
+    expect(Object.keys(vars)).toHaveLength(13 + 5 + 8)
   })
   it('takes a prefix', () => {
     expect(Object.keys(themeToVars('nord', { prefix: 'tk' })).every((k) => k.startsWith('--tk-'))).toBe(true)
+  })
+})
+
+describe('on- colours', () => {
+  it.each(themes.map((t) => [t.id]))('%s: each on- colour is the more readable of black and white', (id) => {
+    const vars = themeToVars(id)
+    for (const t of ['primary', 'accent', 'success', 'warning', 'danger']) {
+      const bg = vars[`--theme-${t}`]
+      const on = vars[`--theme-on-${t}`]
+      const other = on === '#ffffff' ? '#0b0b0f' : '#ffffff'
+      expect(contrast(on, bg)).toBeGreaterThanOrEqual(contrast(other, bg))
+    }
   })
 })
 

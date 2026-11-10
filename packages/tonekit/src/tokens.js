@@ -48,10 +48,14 @@ export function defineTheme({ id, name, mode, colors = {}, base, tags = [], cred
   }
 }
 
+// colours that get an "on-" partner: black or white text that reads on them
+const ON_TOKENS = ['primary', 'accent', 'success', 'warning', 'danger']
+
 /**
  * The CSS custom properties for a theme:
- * --theme-bg … --theme-danger, --theme-on-primary (black or white text for
- * primary buttons), and --theme-*-rgb triples for rgba(var(--theme-primary-rgb), .2).
+ * --theme-bg … --theme-danger; --theme-on-primary, -on-accent, -on-success,
+ * -on-warning and -on-danger (black or white text for solid buttons and
+ * badges); and --theme-*-rgb triples for rgba(var(--theme-primary-rgb), .2).
  * `prefix` renames them: { prefix: 'tk' } gives --tk-bg.
  */
 export function themeToVars(themeOrId, { prefix = 'theme' } = {}) {
@@ -59,7 +63,7 @@ export function themeToVars(themeOrId, { prefix = 'theme' } = {}) {
   const v = (name) => `--${prefix}-${name}`
   const vars = {}
   for (const t of TOKENS) vars[v(tokenToVar(t))] = colors[t]
-  vars[v('on-primary')] = readableOn(colors.primary)
+  for (const t of ON_TOKENS) vars[v(`on-${t}`)] = readableOn(colors[t])
   for (const t of RGB_TOKENS) vars[v(`${tokenToVar(t)}-rgb`)] = rgbTriple(colors[t])
   return vars
 }

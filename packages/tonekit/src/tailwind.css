@@ -3,7 +3,8 @@
  *   @import "tonekit/tailwind.css";
  * Every token becomes a colour utility that follows the active theme:
  * bg-bg, bg-surface, text-text, text-muted, border-border, bg-primary,
- * text-on-primary, bg-primary/15 … and `dark:` follows the theme's mode.
+ * text-on-primary (also on-accent, on-success, on-warning, on-danger), bg-primary/15 …
+ * and `dark:` follows the theme's mode.
  */
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -19,7 +20,11 @@
   --color-primary: var(--theme-primary);
   --color-on-primary: var(--theme-on-primary);
   --color-accent: var(--theme-accent);
+  --color-on-accent: var(--theme-on-accent);
   --color-success: var(--theme-success);
+  --color-on-success: var(--theme-on-success);
   --color-warning: var(--theme-warning);
+  --color-on-warning: var(--theme-on-warning);
   --color-danger: var(--theme-danger);
+  --color-on-danger: var(--theme-on-danger);
 }

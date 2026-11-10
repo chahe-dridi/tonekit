@@ -55,7 +55,7 @@ export interface VarOptions {
   /** Variable prefix. Default 'theme' (--theme-bg). */
   prefix?: string
 }
-/** --theme-bg … --theme-danger, --theme-on-primary and --theme-*-rgb triples. */
+/** --theme-bg … --theme-danger, --theme-on-{primary,accent,success,warning,danger} and --theme-*-rgb triples. */
 export declare function themeToVars(theme: ThemeInput, options?: VarOptions): Record<string, string>
 /** One theme as a CSS rule; selector defaults to [data-theme="<id>"]. */
 export declare function themeToCss(theme: ThemeInput, options?: VarOptions & { selector?: string }): string
