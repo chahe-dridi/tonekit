@@ -1,0 +1,25 @@
+/*
+ * tonekit for Tailwind CSS v4. After `@import "tailwindcss";` add:
+ *   @import "tonekit/tailwind.css";
+ * Every token becomes a colour utility that follows the active theme:
+ * bg-bg, bg-surface, text-text, text-muted, border-border, bg-primary,
+ * text-on-primary, bg-primary/15 … and `dark:` follows the theme's mode.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-bg: var(--theme-bg);
+  --color-bg-alt: var(--theme-bg-alt);
+  --color-surface: var(--theme-surface);
+  --color-surface-alt: var(--theme-surface-alt);
+  --color-border: var(--theme-border);
+  --color-text: var(--theme-text);
+  --color-muted: var(--theme-text-muted);
+  --color-subtle: var(--theme-text-subtle);
+  --color-primary: var(--theme-primary);
+  --color-on-primary: var(--theme-on-primary);
+  --color-accent: var(--theme-accent);
+  --color-success: var(--theme-success);
+  --color-warning: var(--theme-warning);
+  --color-danger: var(--theme-danger);
+}
