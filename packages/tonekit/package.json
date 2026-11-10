@@ -5,7 +5,7 @@
   "type": "module",
   "license": "MIT",
   "author": "Chaher Dridi (https://github.com/chahe-dridi)",
-  "homepage": "https://github.com/chahe-dridi/tonekit#readme",
+  "homepage": "https://tonekit-gamma.vercel.app",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chahe-dridi/tonekit.git",
