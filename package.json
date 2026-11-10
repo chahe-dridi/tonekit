@@ -18,5 +18,9 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "devDependencies": {
+    "gifenc": "^1.0.3",
+    "puppeteer-core": "^25.16.0"
   }
 }
