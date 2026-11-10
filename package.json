@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "gifenc": "^1.0.3",
+    "pngjs": "^7.0.0",
     "puppeteer-core": "^25.16.0"
   }
 }
