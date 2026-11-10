@@ -229,7 +229,7 @@ export default function Showcase({ name = 'tonekit', level = 3 }) {
           <pre className="overflow-x-auto rounded-lg border border-border bg-bg p-3 font-mono text-xs leading-relaxed">
             <code>
               <span className="italic text-muted">{'// pick a theme'}</span>{'\n'}
-              <span className="text-primary">import</span>{' { applyTheme } '}<span className="text-primary">from</span>{' '}<span className="text-muted">'tonekit'</span>{'\n\n'}
+              <span className="text-primary">import</span>{' { applyTheme } '}<span className="text-primary">from</span>{' '}<span className="text-muted">'tonekit-themes'</span>{'\n\n'}
               <span className="font-semibold">applyTheme</span>{'('}<span className="text-muted">'nord'</span>{')\n'}
               <span className="text-primary">const</span>{' ratio = '}<span className="text-primary">7.2</span>
             </code>

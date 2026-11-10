@@ -1,6 +1,6 @@
 // Source of the 1200×630 social card: `npm run og -w @tonekit/site` screenshots it.
-import { themes } from 'tonekit'
-import { ThemeScope } from 'tonekit/react'
+import { themes } from 'tonekit-themes'
+import { ThemeScope } from 'tonekit-themes/react'
 import { Logo } from '../components/Chrome'
 import MiniApp from '../components/MiniApp'
 import { useSEO } from '../lib/useSEO'

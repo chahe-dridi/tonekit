@@ -1,4 +1,4 @@
-import { TOKENS, checkTheme, readableOn, tokenToVar } from 'tonekit'
+import { TOKENS, checkTheme, readableOn, tokenToVar } from 'tonekit-themes'
 import { useCopy } from './Code'
 import { CheckIcon, CloseIcon } from './Icons'
 

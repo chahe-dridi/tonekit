@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
-import { themes, themesById } from 'tonekit'
-import { ThemeScope, ThemeSwatch, useTheme } from 'tonekit/react'
+import { themes, themesById } from 'tonekit-themes'
+import { ThemeScope, ThemeSwatch, useTheme } from 'tonekit-themes/react'
 import { CodeTabs, CopyButton } from '../components/Code'
 import { ArrowIcon, ExternalIcon } from '../components/Icons'
 import Showcase from '../components/Showcase'

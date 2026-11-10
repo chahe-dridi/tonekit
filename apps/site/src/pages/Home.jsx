@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { TOKENS, themes, themesById, tokenToVar } from 'tonekit'
-import { ThemeScope, ThemeSwatch, useTheme } from 'tonekit/react'
+import { TOKENS, themes, themesById, tokenToVar } from 'tonekit-themes'
+import { ThemeScope, ThemeSwatch, useTheme } from 'tonekit-themes/react'
 import { CodeTabs, CopyButton } from '../components/Code'
 import { ArrowIcon, BoltIcon, BrushIcon, CodeIcon, EyeIcon, LayersIcon, ShieldIcon } from '../components/Icons'
 import MiniApp from '../components/MiniApp'
@@ -27,7 +27,7 @@ const QUICK_START = [
   {
     label: 'CSS',
     code: `/* 1. load every theme as CSS variables */
-@import "tonekit/themes.css";
+@import "tonekit-themes/themes.css";
 
 /* 2. pick one */
 <html data-theme="nord">
@@ -41,7 +41,7 @@ const QUICK_START = [
   },
   {
     label: 'React',
-    code: `import { ThemeProvider, ThemePicker } from 'tonekit/react'
+    code: `import { ThemeProvider, ThemePicker } from 'tonekit-themes/react'
 
 export default function App() {
   return (
@@ -56,7 +56,7 @@ export default function App() {
     label: 'Tailwind v4',
     code: `/* app.css */
 @import "tailwindcss";
-@import "tonekit/tailwind.css";
+@import "tonekit-themes/tailwind.css";
 
 <div class="bg-surface text-text border border-border">
   <button class="bg-primary text-on-primary">Save</button>
@@ -65,7 +65,7 @@ export default function App() {
   },
   {
     label: 'JavaScript',
-    code: `import { applyTheme, saveTheme, checkTheme } from 'tonekit'
+    code: `import { applyTheme, saveTheme, checkTheme } from 'tonekit-themes'
 
 applyTheme('gruvbox')          // sets --theme-* on <html>
 saveTheme('gruvbox')           // remembered on the next visit

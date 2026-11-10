@@ -22,8 +22,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: [
-      { find: /^tonekit\/react$/, replacement: lib('react.jsx') },
-      { find: /^tonekit$/, replacement: lib('index.js') },
+      { find: /^tonekit-themes\/react$/, replacement: lib('react.jsx') },
+      { find: /^tonekit-themes$/, replacement: lib('index.js') },
     ],
   },
   define: {

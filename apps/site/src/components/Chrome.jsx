@@ -1,7 +1,7 @@
 // Site frame: logo, navbar and footer.
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { ThemePicker } from 'tonekit/react'
+import { ThemePicker } from 'tonekit-themes/react'
 import { GITHUB, INSTALL, NPM, VERSION } from '../lib/site'
 import { CopyButton } from './Code'
 import { CloseIcon, GitHubIcon, MenuIcon } from './Icons'

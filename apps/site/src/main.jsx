@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
-import { ThemeProvider } from 'tonekit/react'
+import { ThemeProvider } from 'tonekit-themes/react'
 // Self-hosted fonts (latin only): no render-blocking third-party stylesheet
 import '@fontsource-variable/inter/wght.css'
 import '@fontsource/jetbrains-mono/latin-400.css'

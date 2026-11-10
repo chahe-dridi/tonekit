@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { themes } from 'tonekit'
-import { ThemeSwatch } from 'tonekit/react'
+import { themes } from 'tonekit-themes'
+import { ThemeSwatch } from 'tonekit-themes/react'
 import { useSEO } from '../lib/useSEO'
 
 export default function NotFound() {

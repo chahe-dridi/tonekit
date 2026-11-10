@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { TOKENS, checkTheme } from 'tonekit'
-import { ThemeScope, useTheme } from 'tonekit/react'
+import { TOKENS, checkTheme } from 'tonekit-themes'
+import { ThemeScope, useTheme } from 'tonekit-themes/react'
 import MiniApp from './MiniApp'
 
 /** The lowest contrast ratio a theme reaches across its checks. */
