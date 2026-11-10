@@ -6,7 +6,7 @@
 
 Catppuccin, Nord, Tokyo Night, Gruvbox, Rosé Pine and more, all sharing one shape of 13 colour tokens and all meeting WCAG contrast targets. Use them as plain CSS variables, with Tailwind, or with a React provider and theme picker.
 
-[![npm](https://img.shields.io/npm/v/tonekit?color=3B82F6)](https://www.npmjs.com/package/tonekit)
+[![npm](https://img.shields.io/npm/v/tonekit-themes?color=3B82F6)](https://www.npmjs.com/package/tonekit-themes)
 [![CI](https://github.com/chahe-dridi/tonekit/actions/workflows/ci.yml/badge.svg)](https://github.com/chahe-dridi/tonekit/actions/workflows/ci.yml)
 [![license](https://img.shields.io/github/license/chahe-dridi/tonekit?color=3B82F6)](https://github.com/chahe-dridi/tonekit/blob/main/LICENSE)
 
@@ -36,13 +36,13 @@ Catppuccin, Nord, Tokyo Night, Gruvbox, Rosé Pine and more, all sharing one sha
 ## Install
 
 ```bash
-npm install tonekit
+npm install tonekit-themes
 ```
 
 ## Plain CSS
 
 ```css
-@import "tonekit/themes.css";
+@import "tonekit-themes/themes.css";
 
 .card {
   background: var(--theme-surface);
@@ -64,7 +64,7 @@ Without `data-theme`, the page follows the visitor's light or dark setting.
 ## React
 
 ```jsx
-import { ThemeProvider, ThemePicker, ThemeScope, useTheme } from 'tonekit/react'
+import { ThemeProvider, ThemePicker, ThemeScope, useTheme } from 'tonekit-themes/react'
 
 export default function App() {
   return (
@@ -83,7 +83,7 @@ export default function App() {
 
 ```css
 @import "tailwindcss";
-@import "tonekit/tailwind.css";
+@import "tonekit-themes/tailwind.css";
 ```
 
 ```html
@@ -96,7 +96,7 @@ export default function App() {
 ## JavaScript
 
 ```js
-import { applyTheme, saveTheme, resolveTheme, checkTheme, defineTheme } from 'tonekit'
+import { applyTheme, saveTheme, resolveTheme, checkTheme, defineTheme } from 'tonekit-themes'
 
 applyTheme(resolveTheme())   // saved choice, or the OS default
 saveTheme('nord')            // or saveTheme('system')
