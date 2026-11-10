@@ -6,6 +6,10 @@ and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- Published through npm Trusted Publishing from GitHub Actions (no stored token). No change to the package code.
+
 ## [0.1.1] - 2026-11-10
 
 ### Changed
